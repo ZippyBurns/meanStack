@@ -1,0 +1,57 @@
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $.get('https://opentdb.com/api.php?amount=10&category=20&difficulty=easy&type=multiple', function (data) {
+            console.log(data);
+            $('.question0').html(data.results[0].question)
+            $('.option01').append(data.results[0].incorrect_answers[0])
+            $('.option02').append(data.results[0].incorrect_answers[1])
+            $('.option03').append(data.results[0].incorrect_answers[2])
+            $('.option04').append(data.results[0].correct_answer)
+
+            $('.question1').html(data.results[1].question)
+            $('.option11').append(data.results[1].incorrect_answers[2])
+            $('.option14').append(data.results[1].incorrect_answers[0])
+            $('.option13').append(data.results[1].incorrect_answers[1])
+            $('.option12').append(data.results[1].correct_answer)
+        })
+    })
+</script>
+<div class="container">
+    <h1>Do you know mythology?</h1>
+    <h6 class="question0"></h6>
+    <form>
+        <div class="radio">
+            <label class="option01"><input type="radio" name="optradio"></label>
+        </div>
+        <div class="radio">
+            <label class="option02"><input type="radio" name="optradio"></label>
+        </div>
+        <div class="radio">
+            <label class="option03"><input type="radio" name="optradio"></label>
+        </div>
+        <div class="radio">
+            <label class="option04"><input type="radio" name="optradio"></label>
+        </div>
+    </form>
+
+    <h6 class="question0"></h6>
+    <form>
+        <div class="radio">
+            <label class="option11"><input type="radio" name="optradio"></label>
+        </div>
+        <div class="radio">
+            <label class="option12"><input type="radio" name="optradio"></label>
+        </div>
+        <div class="radio">
+            <label class="option13"><input type="radio" name="optradio"></label>
+        </div>
+        <div class="radio">
+            <label class="option14"><input type="radio" name="optradio"></label>
+        </div>
+    </form>
+
+</div>
